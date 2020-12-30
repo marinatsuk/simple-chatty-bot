@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int height = scanner.nextInt();
+        int numberOfBridges = scanner.nextInt();
+        int numberPassed = 0;
+
+        while (scanner.hasNext()) {
+            int heightOfBridge = scanner.nextInt();
+            if (height >= heightOfBridge) {
+                break;
+            } else {
+                numberPassed += 1;
+            }
+
+        }
+        if (numberPassed < numberOfBridges) {
+            numberPassed = numberPassed + 1;
+            System.out.print("Will crash on bridge " + numberPassed);
+        } else if (numberPassed == numberOfBridges) {
+            System.out.print("Will not crash");
+        }
+    }
+}
